@@ -8,6 +8,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -53,13 +54,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         //Position of markers inside the map
-        mMap.addMarker(new MarkerOptions().position(firstMarker).title("Marker at Home"));
-        mMap.addMarker(new MarkerOptions().position(secondMarker).title("Marker at university"));
-        mMap.addMarker(new MarkerOptions().position(thirdMarker).title("Marker at Mega Center"));
-        mMap.addMarker(new MarkerOptions().position(fourthMarker).title("Marker at university Obrajes"));
-        mMap.addMarker(new MarkerOptions().position(fifthMarker).title("Marker at Plaza Murillo"));
-        mMap.addMarker(new MarkerOptions().position(sixthMarker).title("Marker at Texas in San Miguel"));
-        mMap.addMarker(new MarkerOptions().position(seventhMarker).title("Marker at Airport"));
+        mMap.addMarker(new MarkerOptions().position(firstMarker).title("Home")).setIcon(BitmapDescriptorFactory.fromResource(R.drawable.icon_home));
+        mMap.addMarker(new MarkerOptions().position(secondMarker).title("UPB La Paz")).setIcon(BitmapDescriptorFactory.fromResource(R.drawable.icon_university));
+        mMap.addMarker(new MarkerOptions().position(thirdMarker).title("Mega Center")).setIcon(BitmapDescriptorFactory.fromResource(R.drawable.icon_mall));
+        mMap.addMarker(new MarkerOptions().position(fourthMarker).title("UPB La Paz - Obrajes")).setIcon(BitmapDescriptorFactory.fromResource(R.drawable.icon_university));
+        mMap.addMarker(new MarkerOptions().position(fifthMarker).title("Plaza Murillo")).setIcon(BitmapDescriptorFactory.fromResource(R.drawable.icons_park));
+        mMap.addMarker(new MarkerOptions().position(sixthMarker).title("Texas - San Miguel")).setIcon(BitmapDescriptorFactory.fromResource(R.drawable.icons_restaurant));
+        mMap.addMarker(new MarkerOptions().position(seventhMarker).title("Aeropuerto")).setIcon(BitmapDescriptorFactory.fromResource(R.drawable.icon_airport));
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(firstMarker,16));
     }
